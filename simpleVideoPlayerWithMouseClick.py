@@ -58,14 +58,14 @@ while True:
         # Переключение паузы
         is_paused = not is_paused
         print(f"Видео {'остановлено' if is_paused else 'возобновлено'}")
-    elif key == 81 or key == ord('a'):
+    elif key == ord('a'):
         # Перемотка назад на 10 кадров
         new_position = max(0, current_frame - STEP)
         cap.set(cv2.CAP_PROP_POS_FRAMES, new_position)
         current_frame = new_position
         _, last_frame = cap.read()
         print(f"Перемотано назад на {STEP} кадров. Текущий кадр: {current_frame}")
-    elif key == 83 or key == ord('d'):
+    elif key == ord('d'):
         # Перемотка вперед на 10 кадров
         total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         new_position = min(total_frames - 1, current_frame + STEP)
