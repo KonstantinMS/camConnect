@@ -19,6 +19,7 @@ def mouse_handler(event, x, y, flags, param):
 
 
 # Открываем видеопоток из файла
+PATH = PATH.strip().replace('\\', '/')
 cap = cv2.VideoCapture(PATH)
 
 # Создаем окно для отображения видео
